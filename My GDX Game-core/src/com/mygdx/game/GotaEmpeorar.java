@@ -6,23 +6,14 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 
-public class GotaBuena extends Gota {
-    private Sound dropSound;
-    
-    public void crearGotaDeLluvia(int i) {
-    	this.rectangulo = new Rectangle();
-    	int a = MathUtils.random(1, 3);
-    	if(a == 1) {
-    		this.textura = new Texture(Gdx.files.internal("fruta1.png"));
-    		}
-    	if(a == 2) {
-    		this.textura = new Texture(Gdx.files.internal("fruta2.png"));
-    		}
-    	if(a == 3) {
-    		this.textura = new Texture(Gdx.files.internal("fruta3.png"));
-    		}
-    	this.dropSound = Gdx.audio.newSound(Gdx.files.internal("drop.wav"));
-    	
+public class GotaEmpeorar extends Gota{
+	Sound dropSound;
+	@Override
+	public void crearGotaDeLluvia(int i) {
+		// TODO Auto-generated method stub
+		this.rectangulo = new Rectangle();
+		this.textura = new Texture(Gdx.files.internal("PotMalo.png"));
+		this.dropSound = Gdx.audio.newSound(Gdx.files.internal("hurt.mp3"));
 	      if(i <2) {
 	    	  rectangulo.x = MathUtils.random(0, 800-64);
 	    	  rectangulo.y = 480;
@@ -37,14 +28,14 @@ public class GotaBuena extends Gota {
 	    	  rectangulo.height = 64;
 	    	  setSubir(2);
 	      }
+		
 	}
-    
+
+	@Override
 	public void chocarTarro(Tarro tarro) {
 		// TODO Auto-generated method stub
-		tarro.sumarPuntos(1);
-        dropSound.play();
+		tarro.empeorar();
+		dropSound.play();
 	}
-	
-	
 
 }

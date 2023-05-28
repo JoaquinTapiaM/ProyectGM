@@ -7,7 +7,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 
 
-public abstract class Gota {
+public abstract class Gota implements Movible{
 	private int subir;
 	public Rectangle rectangulo;
 	public Texture textura;
@@ -30,9 +30,6 @@ public abstract class Gota {
 		  else {
 			  rectangulo.y += 300 * Gdx.graphics.getDeltaTime();
 		  }
-		if(rectangulo.overlaps(tarro.getArea())) {
-			chocarTarro(tarro);
-		}
 	}
 	
 	public Rectangle getRectangulo() {

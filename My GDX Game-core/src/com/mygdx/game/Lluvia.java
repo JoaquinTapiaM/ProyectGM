@@ -43,7 +43,18 @@ public class Lluvia {
 	      //Rectangle raindrop = new Rectangle();
 	   // ver el tipo de gota
 	      int i = MathUtils.random(0, 2);
-	      if (MathUtils.random(1,10)<3) {	 
+	      int j = MathUtils.random(1,20);
+	      if (j <2) {
+	    	  GotaPotenciador gotita = new GotaPotenciador();
+	    	  gotita.crearGotaDeLluvia(i);
+	    	  rainDropsPos.add(gotita);
+	      }
+	      else if(j<6) {
+	    	  GotaEmpeorar gotita = new GotaEmpeorar();
+	    	  gotita.crearGotaDeLluvia(i);
+	    	  rainDropsPos.add(gotita);
+	      }
+	      else if (j<11) {	 
 	    	  GotaMala gotita = new GotaMala();
 	      	  gotita.crearGotaDeLluvia(i);
 	      	  rainDropsPos.add(gotita);

@@ -9,7 +9,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 
 
-public class Tarro {
+public class Tarro implements Movible{
 	   private Rectangle bucket;
 	   private Texture bucketImage;
 	   private Sound sonidoHerido;
@@ -94,5 +94,15 @@ public class Tarro {
    public boolean estaHerido() {
 	   return herido;
    }
-	   
+   
+   public void mejorar() {
+	   this.velx = this.velx + 100;
+   }
+   
+   public void empeorar() {
+	   this.velx = this.velx - 75;
+	   if(velx <= 50) {
+		   velx = 50;
+	   }
+   }
 }

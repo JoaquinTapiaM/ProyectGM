@@ -10,7 +10,18 @@ public class GotaMala extends Gota{
 	public void crearGotaDeLluvia(int i) {
 		// TODO Auto-generated method stub
 		this.rectangulo = new Rectangle();
-		this.textura = new Texture(Gdx.files.internal("dropBad.png"));
+		int a = MathUtils.random(1, 3);
+		if(a == 1) {
+    		this.textura = new Texture(Gdx.files.internal("basura1.png"));
+    		}
+    	if(a == 2) {
+    		this.textura = new Texture(Gdx.files.internal("basura2.png"));
+    		}
+    	if(a == 3) {
+    		this.textura = new Texture(Gdx.files.internal("basura3.png"));
+    		}
+		
+		
 	      if(i <2) {
 	    	  rectangulo.x = MathUtils.random(0, 800-64);
 	    	  rectangulo.y = 480;
