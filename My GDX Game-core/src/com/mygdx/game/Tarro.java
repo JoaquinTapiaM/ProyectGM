@@ -20,6 +20,7 @@ public class Tarro implements Movible{
 	   private int tiempoHeridoMax=50;
 	   private int tiempoHerido;
 	   
+	   
 	   public Tarro(Texture tex, Sound ss) {
 		   bucketImage = tex;
 		   sonidoHerido = ss;
@@ -66,7 +67,7 @@ public class Tarro implements Movible{
 	   } 
 	   
 	   
-	   public void actualizarMovimiento() { 
+	   public void actualizarMovimiento(Tarro tarro) { 
 		   // movimiento desde mouse/touch
 		   /*if(Gdx.input.isTouched()) {
 			      Vector3 touchPos = new Vector3();

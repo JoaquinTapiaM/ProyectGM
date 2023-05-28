@@ -39,11 +39,21 @@ public class GotaBuena extends Gota {
 	      }
 	}
     
+    public void actualizarMovimiento(Tarro tarro) {
+		if(this.getSubir()==1) {
+			  rectangulo.y -= 300 * Gdx.graphics.getDeltaTime();
+		  }
+		  else {
+			  rectangulo.y += 300 * Gdx.graphics.getDeltaTime();
+		  }
+	}
+    
 	public void chocarTarro(Tarro tarro) {
 		// TODO Auto-generated method stub
 		tarro.sumarPuntos(1);
         dropSound.play();
 	}
+
 	
 	
 

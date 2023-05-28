@@ -32,6 +32,7 @@ public class GotaPotenciador extends Gota{
 	      }
 	}
 
+	
 	@Override
 	public void chocarTarro(Tarro tarro) {
 		// TODO Auto-generated method stub

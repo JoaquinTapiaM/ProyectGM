@@ -67,7 +67,7 @@ public class GameLluvia extends ApplicationAdapter {
 		
 		if (!tarro.estaHerido()) {
 			// movimiento del tarro desde teclado
-	        tarro.actualizarMovimiento();        
+	        tarro.actualizarMovimiento(tarro);        
 			// caida de la lluvia 
 	        lluvia.actualizarMovimiento(tarro);	   
 		}
