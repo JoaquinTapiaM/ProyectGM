@@ -9,21 +9,21 @@ import com.badlogic.gdx.math.Rectangle;
 
 public abstract class Gota implements Movible{
 	private int subir;
-	public Rectangle rectangulo;
-	public Texture textura;
+	private Rectangle rectangulo;
+	private Texture textura;
 	
 	public abstract void crearGotaDeLluvia(int i);
 	
 	
-	public abstract void chocarTarro(Tarro tarro);
+	public abstract void chocarTarro(Pou tarro);
 	
 
 	
 	public void actualizarDibujo(SpriteBatch batch) {
-		batch.draw(textura, rectangulo.x, rectangulo.y); 
+		batch.draw(textura, rectangulo.x, rectangulo.y); 	
 	}
 	
-	public void actualizarMovimiento(Tarro tarro) {
+	public void actualizarMovimiento(Pou tarro) {
 		if(this.getSubir()==1) {
 			  rectangulo.y -= 300 * Gdx.graphics.getDeltaTime();
 		  }
@@ -34,6 +34,18 @@ public abstract class Gota implements Movible{
 	
 	public Rectangle getRectangulo() {
 		return rectangulo;
+	}
+	
+	public void setRectangulo(Rectangle rectangulo) {
+		this.rectangulo = rectangulo;
+	}
+	
+	public Texture getTextura() {
+		return this.textura;
+	}
+	
+	public void setTextura(Texture textura) {
+		this.textura = textura;
 	}
 	
 	public int getSubir() {

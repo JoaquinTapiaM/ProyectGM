@@ -9,7 +9,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 
 
-public class Tarro implements Movible{
+public class Pou implements Movible {
 	   private Rectangle bucket;
 	   private Texture bucketImage;
 	   private Sound sonidoHerido;
@@ -19,11 +19,18 @@ public class Tarro implements Movible{
 	   private boolean herido = false;
 	   private int tiempoHeridoMax=50;
 	   private int tiempoHerido;
+	   private static Pou pou;
 	   
-	   
-	   public Tarro(Texture tex, Sound ss) {
+	   private Pou(Texture tex, Sound ss) {
 		   bucketImage = tex;
 		   sonidoHerido = ss;
+	   }
+	   
+	   public static Pou getInstance(Texture tex, Sound ss) {
+		   if(pou == null) {
+			   pou = new Pou(tex,ss);
+		   }
+		   return pou;
 	   }
 	   
 		public int getVidas() {
@@ -42,7 +49,6 @@ public class Tarro implements Movible{
 		
 	
 	   public void crear() {
-
 		      bucket = new Rectangle();
 		      bucket.x = 800 / 2 - 64 / 2;
 		      bucket.y = 20;
@@ -67,7 +73,7 @@ public class Tarro implements Movible{
 	   } 
 	   
 	   
-	   public void actualizarMovimiento(Tarro tarro) { 
+	   public void actualizarMovimiento(Pou tarro) { 
 		   // movimiento desde mouse/touch
 		   /*if(Gdx.input.isTouched()) {
 			      Vector3 touchPos = new Vector3();

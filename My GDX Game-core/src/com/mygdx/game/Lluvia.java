@@ -12,7 +12,7 @@ import com.badlogic.gdx.utils.TimeUtils;
 
 
 
-public class Lluvia {
+public class Lluvia extends VidaLluvia {
 	private Array<Gota> rainDropsPos;
 	//private Array<Integer> rainDropsType;
 	//private Array<Integer> rainDropsFall;
@@ -39,7 +39,7 @@ public class Lluvia {
 	      rainMusic.play();
 	}
 	
-	private void crearGotaDeLluvia() {
+	public void crearGotaDeLluvia() {
 	      //Rectangle raindrop = new Rectangle();
 	   // ver el tipo de gota
 	      int i = MathUtils.random(0, 2);
@@ -71,7 +71,7 @@ public class Lluvia {
 	      
 	   }
 	
-   public void actualizarMovimiento(Tarro tarro) { 
+   public void actualizarMovimiento(Pou tarro) { 
 	   // generar gotas de lluvia 
 	   if(TimeUtils.nanoTime() - lastDropTime > 100000000) crearGotaDeLluvia();
 	  
